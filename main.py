@@ -19,3 +19,11 @@ if __name__ == "__main__":
 
     print("invoice columns")
     print(df_inv.columns)
+
+    df_po, df_inv = compare.new_index(df_po, df_inv)
+
+    print("purchase order")
+    print(df_po.tail)
+
+    print("invoice")
+    print(df_inv.tail)

@@ -17,8 +17,6 @@ def drop_info_rows(df_purchase_order):
 
     return df_purchase_order
 
-    # do columns need to be dropped?
-
 
 def read_files(purchase_order, invoice):
     # read & clean main inventory sheet
