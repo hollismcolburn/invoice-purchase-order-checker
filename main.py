@@ -12,9 +12,10 @@ if __name__ == "__main__":
     print(df_invoice.columns)
 
     files.drop_info_rows(df_purchase_order)
+    df_po, df_inv = files.rename_columns(df_purchase_order, df_invoice)
 
     print("purchase order columns")
-    print(df_purchase_order.columns)
+    print(df_po.columns)
 
     print("invoice columns")
-    print(df_invoice.columns)
+    print(df_inv.columns)
