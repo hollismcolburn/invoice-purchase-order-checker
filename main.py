@@ -10,3 +10,11 @@ if __name__ == "__main__":
 
     print("invoice columns")
     print(df_invoice.columns)
+
+    files.drop_info_rows(df_purchase_order)
+
+    print("purchase order columns")
+    print(df_purchase_order.columns)
+
+    print("invoice columns")
+    print(df_invoice.columns)
