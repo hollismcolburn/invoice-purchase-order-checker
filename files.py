@@ -26,3 +26,8 @@ def read_files(purchase_order, invoice):
     df_invoice = pd.read_csv(invoice, header = 0)
 
     return df_purchase_order, df_invoice
+
+
+def combined_file(df_combined):
+    df_combined.to_csv("combined_data.csv")
+    

@@ -27,3 +27,7 @@ if __name__ == "__main__":
 
     print("invoice")
     print(df_inv.tail)
+
+    df_combined = compare.match_items(df_po, df_inv)
+
+    files.combined_file(df_combined)
