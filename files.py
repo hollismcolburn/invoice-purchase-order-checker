@@ -21,7 +21,6 @@ def drop_info_rows(df_purchase_order):
 def read_files(purchase_order, invoice):
     # read & clean main inventory sheet
     df_purchase_order = pd.read_csv(purchase_order, header = 0)
-    # df_original = clean_main(df_original)
 
     df_invoice = pd.read_csv(invoice, header = 0)
 
@@ -30,4 +29,3 @@ def read_files(purchase_order, invoice):
 
 def combined_file(df_combined):
     df_combined.to_csv("combined_data.csv")
-    

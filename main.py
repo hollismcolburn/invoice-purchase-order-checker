@@ -32,7 +32,10 @@ if __name__ == "__main__":
 
     df_combined = compare.compare_qty(df_combined)
     df_combined = compare.compare_price(df_combined)
+
     print("combined columns")
     print(df_combined.columns)
+
+    compare.separate_problems(df_combined)
 
     files.combined_file(df_combined)
