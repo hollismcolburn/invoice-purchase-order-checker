@@ -29,3 +29,21 @@ def compare_price(df_combined):
     df_combined = df_combined.fillna(0.0)
     df_combined["Same PRICE"] = df_combined["Net Price_INV"] - df_combined["Cost_PO"]
     return df_combined
+
+
+def separate_problems(df_combined):
+    # write file with only items that have differing quantities
+    df_quantity = df_combined.drop(df_combined[df_combined['Same QTY'] == 0.0].index)
+    
+    print("df_quantity")
+    print(df_quantity)
+
+    df_quantity.to_csv("quantity.csv")
+
+    # write file with only items that have different prices
+    df_price = df_combined.drop(df_combined[df_combined['Same PRICE'] == 0.0].index)
+
+    print("df_price")
+    print(df_price)
+
+    df_price.to_csv("price.csv")
