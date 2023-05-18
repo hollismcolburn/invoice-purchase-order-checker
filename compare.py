@@ -16,18 +16,16 @@ def match_items(df_po, df_inv):
     return df_combined
 
 
-# def compare_qty(df_combined):
-#     # compare quantities
-#     # "Quantity_PO" & "Qty Shipped_INV"
-#     # df_combined["Same Qty"] = df_combined["Quantity_PO"].isin(df_combined["Qty Shipped_INV"])
-#     df_combined["Same QTY"] = np.where(df_combined["Quantity_PO"] == "Qty Shipped_INV")
-#     # print(df_combined["Quantity_PO"].isin(df_combined["Qty Shipped_INV"]))
-#     return df_combined
+def compare_qty(df_combined):
+    # compare quantities
+    df_combined = df_combined.fillna(0.0)
+    df_combined["Same QTY"] = df_combined["Qty Shipped_INV"] - df_combined["Quantity_PO"]
+    return df_combined
 
 
 def compare_price(df_combined):
     # compare price/cost
     # "Cost_PO" & "Net Price_INV"
-    pass
-
-
+    df_combined = df_combined.fillna(0.0)
+    df_combined["Same PRICE"] = df_combined["Net Price_INV"] - df_combined["Cost_PO"]
+    return df_combined

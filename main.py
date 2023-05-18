@@ -31,6 +31,7 @@ if __name__ == "__main__":
     df_combined = compare.match_items(df_po, df_inv)
 
     df_combined = compare.compare_qty(df_combined)
+    df_combined = compare.compare_price(df_combined)
     print("combined columns")
     print(df_combined.columns)
 
